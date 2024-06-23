@@ -58,17 +58,17 @@ struct ReviewMissedWordsView: View {
                 }
                 .listStyle(PlainListStyle())
 
-                NavigationLink(destination: ReviewResultsView(results: results), isActive: $isReviewResultsViewPresented) {
-                    Button(action: {
-                        checkGuesses()
-                        isReviewResultsViewPresented = true
-                    }) {
-                        Text("Check Guesses")
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
+                Button(action: {
+                    checkGuesses()
+                }) {
+                    Text("Check Guesses")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .navigationDestination(isPresented: $isReviewResultsViewPresented) {
+                    ReviewResultsView(results: results)
                 }
                 .padding()
             }
@@ -125,14 +125,50 @@ struct ReviewMissedWordsView: View {
     }
 
     private func checkGuesses() {
-        var resultsArray: [ReviewResult] = []
-        for (index, missedWord) in missedWords.enumerated() {
-            let guess = guesses[index]
-            let resultText = (guess.lowercased() == missedWord.translation.lowercased()) ? "Correct" : "Incorrect - Correct: \(missedWord.translation)"
-            let result = ReviewResult(word: missedWord.englishWord, guess: guess, result: resultText)
-            resultsArray.append(result)
+        guard let url = URL(string: "http://127.0.0.1:8080/review_guess") else {
+            self.errorMessage = "Invalid URL"
+            return
         }
-        self.results = resultsArray
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let entityKeys = missedWords.map { String($0.id) }
+        let requestBody = "entity_keys=" + entityKeys.joined(separator: "&entity_keys=") +
+                          "&guesses=" + guesses.joined(separator: "&guesses=")
+        request.httpBody = requestBody.data(using: .utf8)
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.errorMessage = "Failed to check guesses: \(error.localizedDescription)"
+                }
+                return
+            }
+
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    self.errorMessage = "No data received"
+                }
+                return
+            }
+
+            do {
+                let jsonString = String(data: data, encoding: .utf8)
+                print("Received JSON: \(jsonString ?? "No JSON")")
+                
+                let decodedResults = try JSONDecoder().decode([ReviewResult].self, from: data)
+                DispatchQueue.main.async {
+                    self.results = decodedResults
+                    self.isReviewResultsViewPresented = true
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.errorMessage = "Failed to decode review results: \(error.localizedDescription)"
+                }
+            }
+        }.resume()
     }
 }
 

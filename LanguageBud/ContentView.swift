@@ -38,7 +38,7 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 if let image = selectedImage {
                     Image(uiImage: image)
@@ -86,29 +86,31 @@ struct ContentView: View {
                 .padding()
 
                 if selectedImage != nil {
-                    NavigationLink(destination: ResultsView(selectedImage: selectedImage!, language: languages[selectedLanguage] ?? "EN"), isActive: $isResultsViewPresented) {
-                        Button(action: {
-                            isResultsViewPresented = true
-                        }) {
-                            Text("Analyze Image")
-                                .padding()
-                                .background(Color.orange)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
-                    }
-                }
-
-                NavigationLink(destination: ReviewMissedWordsView(language: languages[selectedLanguage] ?? "EN"), isActive: $isReviewMissedWordsViewPresented) {
                     Button(action: {
-                        isReviewMissedWordsViewPresented = true
+                        isResultsViewPresented = true
                     }) {
-                        Text("Review Missed Words")
+                        Text("Analyze Image")
                             .padding()
-                            .background(Color.red)
+                            .background(Color.orange)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
+                    .navigationDestination(isPresented: $isResultsViewPresented) {
+                        ResultsView(selectedImage: selectedImage!, language: languages[selectedLanguage] ?? "EN")
+                    }
+                }
+
+                Button(action: {
+                    isReviewMissedWordsViewPresented = true
+                }) {
+                    Text("Review Missed Words")
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .navigationDestination(isPresented: $isReviewMissedWordsViewPresented) {
+                    ReviewMissedWordsView(language: languages[selectedLanguage] ?? "EN")
                 }
             }
             .padding()
