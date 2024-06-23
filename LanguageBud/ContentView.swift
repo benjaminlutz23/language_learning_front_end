@@ -12,24 +12,34 @@ struct ContentView: View {
     @State private var isPickerPresented = false
     @State private var isCameraPresented = false
     @State private var isResultsViewPresented = false
-    @State private var language: String = UserDefaults.standard.string(forKey: "selectedLanguage") ?? "EN"
-    
-    let languages = ["EN", "BG", "JP", "ES", "FR"] // Add other languages as needed
+    @State private var isReviewMissedWordsViewPresented = false
+    @State private var selectedLanguage: String = "English"
+
+    let languages = [
+        "English": "EN",
+        "Bulgarian": "BG",
+        "Japanese": "JA",
+        "Spanish": "ES",
+        "French": "FR",
+        "Chinese (Simplified)": "ZH",
+        "Danish": "DA",
+        "Dutch": "NL",
+        "German": "DE",
+        "Greek": "EL",
+        "Hungarian": "HU",
+        "Italian": "IT",
+        "Polish": "PL",
+        "Portuguese": "PT",
+        "Romanian": "RO",
+        "Russian": "RU",
+        "Slovak": "SK",
+        "Slovenian": "SL",
+        "Swedish": "SV"
+    ]
 
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Select Language", selection: $language) {
-                    ForEach(languages, id: \.self) { lang in
-                        Text(lang).tag(lang)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .onChange(of: language) { newValue in
-                    UserDefaults.standard.set(newValue, forKey: "selectedLanguage")
-                }
-                .padding()
-
                 if let image = selectedImage {
                     Image(uiImage: image)
                         .resizable()
@@ -67,8 +77,16 @@ struct ContentView: View {
                     CameraView(selectedImage: $selectedImage)
                 }
 
+                Picker("Select Language", selection: $selectedLanguage) {
+                    ForEach(languages.keys.sorted(), id: \.self) { language in
+                        Text(language).tag(language)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .padding()
+
                 if selectedImage != nil {
-                    NavigationLink(destination: ResultsView(selectedImage: selectedImage!, language: language), isActive: $isResultsViewPresented) {
+                    NavigationLink(destination: ResultsView(selectedImage: selectedImage!, language: languages[selectedLanguage] ?? "EN"), isActive: $isResultsViewPresented) {
                         Button(action: {
                             isResultsViewPresented = true
                         }) {
@@ -78,6 +96,18 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                         }
+                    }
+                }
+
+                NavigationLink(destination: ReviewMissedWordsView(language: languages[selectedLanguage] ?? "EN"), isActive: $isReviewMissedWordsViewPresented) {
+                    Button(action: {
+                        isReviewMissedWordsViewPresented = true
+                    }) {
+                        Text("Review Missed Words")
+                            .padding()
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
                 }
             }
