@@ -10,6 +10,9 @@ import SwiftUI
 struct ReviewMissedWordsView: View {
     @State private var missedWords: [MissedWord] = []
     @State private var errorMessage: String?
+    @State private var guesses: [String] = []
+    @State private var results: [ReviewResult] = []
+    @State private var isReviewResultsViewPresented = false
     let language: String
 
     var body: some View {
@@ -19,21 +22,55 @@ struct ReviewMissedWordsView: View {
                     .foregroundColor(.red)
                     .padding()
             } else {
-                List(missedWords) { missedWord in
-                    VStack(alignment: .leading) {
-                        Text("Word: \(missedWord.englishWord)")
-                            .font(.headline)
-                        Text("Guesses: \(missedWord.correctGuesses)")
-                            .font(.subheadline)
-                        Text("Translation: \(missedWord.translation)")
-                            .font(.subheadline)
-                        Text("Timestamp: \(missedWord.timestamp)")
-                            .font(.subheadline)
-                        Text("Image Path: \(missedWord.imagePath)")
-                            .font(.subheadline)
+                List {
+                    ForEach(missedWords.indices, id: \.self) { index in
+                        VStack(alignment: .leading) {
+                            AsyncImage(url: URL(string: "http://127.0.0.1:8080/extracted/\(missedWords[index].imagePath)")) { phase in
+                                switch phase {
+                                case .empty:
+                                    ProgressView()
+                                case .success(let image):
+                                    image.resizable()
+                                         .scaledToFit()
+                                         .frame(height: 150)
+                                         .cornerRadius(10)
+                                case .failure:
+                                    Text("Image not available")
+                                        .foregroundColor(.gray)
+                                        .frame(height: 150)
+                                        .cornerRadius(10)
+                                @unknown default:
+                                    fatalError()
+                                }
+                            }
+
+                            Text("Word: \(missedWords[index].englishWord)")
+                                .font(.headline)
+                            TextField("Enter your guess", text: $guesses[index])
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding(.vertical, 5)
+
+                            Text("Guesses: \(missedWords[index].correctGuesses)")
+                                .font(.subheadline)
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
+                .listStyle(PlainListStyle())
+
+                NavigationLink(destination: ReviewResultsView(results: results), isActive: $isReviewResultsViewPresented) {
+                    Button(action: {
+                        checkGuesses()
+                        isReviewResultsViewPresented = true
+                    }) {
+                        Text("Check Guesses")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+                .padding()
             }
         }
         .navigationBarTitle("Review Missed Words")
@@ -77,6 +114,7 @@ struct ReviewMissedWordsView: View {
                 let decodedWords = try JSONDecoder().decode([MissedWord].self, from: data)
                 DispatchQueue.main.async {
                     self.missedWords = decodedWords
+                    self.guesses = Array(repeating: "", count: decodedWords.count)
                 }
             } catch {
                 DispatchQueue.main.async {
@@ -84,6 +122,17 @@ struct ReviewMissedWordsView: View {
                 }
             }
         }.resume()
+    }
+
+    private func checkGuesses() {
+        var resultsArray: [ReviewResult] = []
+        for (index, missedWord) in missedWords.enumerated() {
+            let guess = guesses[index]
+            let resultText = (guess.lowercased() == missedWord.translation.lowercased()) ? "Correct" : "Incorrect - Correct: \(missedWord.translation)"
+            let result = ReviewResult(word: missedWord.englishWord, guess: guess, result: resultText)
+            resultsArray.append(result)
+        }
+        self.results = resultsArray
     }
 }
 
