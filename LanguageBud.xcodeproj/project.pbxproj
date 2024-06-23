@@ -20,6 +20,7 @@
 		0A4FB0032C263AF200AC86F1 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0022C263AF100AC86F1 /* ResultsView.swift */; };
 		0A4FB0052C26413A00AC86F1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0042C26413A00AC86F1 /* ImagePicker.swift */; };
 		0A4FB0092C2654F400AC86F1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0082C2654F400AC86F1 /* CameraView.swift */; };
+		0A4FB00C2C27ADA600AC86F1 /* CheckResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB00B2C27ADA600AC86F1 /* CheckResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0A4FB0042C26413A00AC86F1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0A4FB0082C2654F400AC86F1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		0A4FB00A2C26584100AC86F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0A4FB00B2C27ADA600AC86F1 /* CheckResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				0A4FB0022C263AF100AC86F1 /* ResultsView.swift */,
 				0A4FB0042C26413A00AC86F1 /* ImagePicker.swift */,
 				0A4FB0082C2654F400AC86F1 /* CameraView.swift */,
+				0A4FB00B2C27ADA600AC86F1 /* CheckResultsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				0A4FAFD12C25255A00AC86F1 /* ContentView.swift in Sources */,
 				0A4FB0052C26413A00AC86F1 /* ImagePicker.swift in Sources */,
 				0A4FB0002C252C3300AC86F1 /* Routes.swift in Sources */,
+				0A4FB00C2C27ADA600AC86F1 /* CheckResultsView.swift in Sources */,
 				0A4FAFCF2C25255A00AC86F1 /* LanguageBudApp.swift in Sources */,
 				0A4FAFDB2C25255B00AC86F1 /* LanguageBud.xcdatamodeld in Sources */,
 				0A4FB0092C2654F400AC86F1 /* CameraView.swift in Sources */,

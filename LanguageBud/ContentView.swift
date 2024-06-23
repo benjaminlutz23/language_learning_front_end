@@ -12,11 +12,24 @@ struct ContentView: View {
     @State private var isPickerPresented = false
     @State private var isCameraPresented = false
     @State private var isResultsViewPresented = false
-    @State private var language: String = "EN"
+    @State private var language: String = UserDefaults.standard.string(forKey: "selectedLanguage") ?? "EN"
+    
+    let languages = ["EN", "BG", "JP", "ES", "FR"] // Add other languages as needed
 
     var body: some View {
         NavigationView {
             VStack {
+                Picker("Select Language", selection: $language) {
+                    ForEach(languages, id: \.self) { lang in
+                        Text(lang).tag(lang)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .onChange(of: language) { newValue in
+                    UserDefaults.standard.set(newValue, forKey: "selectedLanguage")
+                }
+                .padding()
+
                 if let image = selectedImage {
                     Image(uiImage: image)
                         .resizable()
