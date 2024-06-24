@@ -79,7 +79,7 @@ struct DropdownView: View {
             }
             .background(scheme == .dark ? Color.black : Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
-            .shadow(color: .primary.opacity(0.3), radius: 4)
+            .shadow(color: .primary.opacity(0.5), radius: 4)
         }
         .padding(.horizontal)
     }

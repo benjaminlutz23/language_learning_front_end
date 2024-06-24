@@ -14,7 +14,8 @@ struct ContentView: View {
     @State private var isResultsViewPresented = false
     @State private var isReviewMissedWordsViewPresented = false
     @State private var selectedLanguage: String = "English"
-
+    @Environment(\.colorScheme) var scheme
+    
     let languages = [
         "English": "EN",
         "Bulgarian": "BG",
@@ -39,7 +40,99 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
+            ZStack {
+                VStack {
+                    Spacer()
+                    
+                    if let image = selectedImage {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 200)
+                    } else {
+                        Text("No Image Selected")
+                            .foregroundColor(.gray)
+                            .frame(height: 200)
+                    }
+
+                    if selectedImage != nil {
+                        Button(action: {
+                            isResultsViewPresented = true
+                        }) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .padding()
+                                .frame(width: 200, height: 50)
+                                .background(.green)
+                                .foregroundColor(scheme == .dark ? Color.black : Color.white)
+                                .cornerRadius(10)
+                                .shadow(color: .primary.opacity(0.5), radius: 4)
+                        }
+                        .navigationDestination(isPresented: $isResultsViewPresented) {
+                            ResultsView(selectedImage: selectedImage!, language: languages[selectedLanguage] ?? "EN")
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            isPickerPresented = true
+                        }) {
+                            Image(systemName: "photo.fill")
+                                .padding()
+                                .frame(width: 50, height: 50)
+                                .background(scheme == .dark ? Color.black : Color.white)
+                                .foregroundColor(.primary)
+                                .cornerRadius(10)
+                                .shadow(color: .primary.opacity(0.5), radius: 4)
+                        }
+                        .sheet(isPresented: $isPickerPresented) {
+                            ImagePicker(selectedImage: $selectedImage)
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            isReviewMissedWordsViewPresented = true
+                        }) {
+                            Text("Rev")
+                                .padding()
+                                .frame(width: 50, height: 50)
+                                .background(scheme == .dark ? Color.black : Color.white)
+                                .foregroundColor(.primary)
+                                .cornerRadius(10)
+                                .shadow(color: .primary.opacity(0.5), radius: 4)
+                        }
+                        .navigationDestination(isPresented: $isReviewMissedWordsViewPresented) {
+                            ReviewMissedWordsView(language: languages[selectedLanguage] ?? "EN")
+                        }
+                        
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            isCameraPresented = true
+                        }) {
+                            Image(systemName: "camera.fill")
+                                .padding()
+                                .frame(width: 50, height: 50)
+                                .background(scheme == .dark ? Color.black : Color.white)
+                                .foregroundColor(.primary)
+                                .cornerRadius(10)
+                                .shadow(color: .primary.opacity(0.5), radius: 4)
+                        }
+                        .sheet(isPresented: $isCameraPresented) {
+                            CameraView(selectedImage: $selectedImage)
+                        }
+                        
+                        Spacer()
+                        
+                    }
+                }
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                
                 DropdownView(
                     title: "Select Language",
                     prompt: "Select",
@@ -48,71 +141,8 @@ struct ContentView: View {
                     selectedLanguage = selected
                 }
                 .padding(.horizontal)
+                .frame(maxHeight: .infinity, alignment: .top)
                 
-                if let image = selectedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 300)
-                } else {
-                    Text("No Image Selected")
-                        .foregroundColor(.gray)
-                        .frame(height: 300)
-                }
-
-                Button(action: {
-                    isPickerPresented = true
-                }) {
-                    Text("Select Image from Library")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .sheet(isPresented: $isPickerPresented) {
-                    ImagePicker(selectedImage: $selectedImage)
-                }
-
-                Button(action: {
-                    isCameraPresented = true
-                }) {
-                    Text("Take Photo with Camera")
-                        .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .sheet(isPresented: $isCameraPresented) {
-                    CameraView(selectedImage: $selectedImage)
-                }
-
-                if selectedImage != nil {
-                    Button(action: {
-                        isResultsViewPresented = true
-                    }) {
-                        Text("Analyze Image")
-                            .padding()
-                            .background(Color.orange)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                    .navigationDestination(isPresented: $isResultsViewPresented) {
-                        ResultsView(selectedImage: selectedImage!, language: languages[selectedLanguage] ?? "EN")
-                    }
-                }
-
-                Button(action: {
-                    isReviewMissedWordsViewPresented = true
-                }) {
-                    Text("Review Missed Words")
-                        .padding()
-                        .background(Color.purple)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .navigationDestination(isPresented: $isReviewMissedWordsViewPresented) {
-                    ReviewMissedWordsView(language: languages[selectedLanguage] ?? "EN")
-                }
             }
             .padding()
         }
