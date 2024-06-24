@@ -40,6 +40,15 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                DropdownView(
+                    title: "Select Language",
+                    prompt: "Select",
+                    options: Array(languages.keys.sorted())
+                ) { selected in
+                    selectedLanguage = selected
+                }
+                .padding(.horizontal)
+                
                 if let image = selectedImage {
                     Image(uiImage: image)
                         .resizable()
@@ -77,14 +86,6 @@ struct ContentView: View {
                     CameraView(selectedImage: $selectedImage)
                 }
 
-                Picker("Select Language", selection: $selectedLanguage) {
-                    ForEach(languages.keys.sorted(), id: \.self) { language in
-                        Text(language).tag(language)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .padding()
-
                 if selectedImage != nil {
                     Button(action: {
                         isResultsViewPresented = true
@@ -105,7 +106,7 @@ struct ContentView: View {
                 }) {
                     Text("Review Missed Words")
                         .padding()
-                        .background(Color.red)
+                        .background(Color.purple)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }

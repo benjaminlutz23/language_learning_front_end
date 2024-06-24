@@ -25,6 +25,7 @@
 		0A4FB0102C27E0D700AC86F1 /* ReviewResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB00F2C27E0D700AC86F1 /* ReviewResultsView.swift */; };
 		0A4FB0142C27E19100AC86F1 /* ReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0132C27E19100AC86F1 /* ReviewResult.swift */; };
 		0A4FB0162C27E21F00AC86F1 /* MissedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0152C27E21F00AC86F1 /* MissedWord.swift */; };
+		0A4FB0192C29242100AC86F1 /* LanguageDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0182C29242100AC86F1 /* LanguageDropDown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		0A4FB00F2C27E0D700AC86F1 /* ReviewResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResultsView.swift; sourceTree = "<group>"; };
 		0A4FB0132C27E19100AC86F1 /* ReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResult.swift; sourceTree = "<group>"; };
 		0A4FB0152C27E21F00AC86F1 /* MissedWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissedWord.swift; sourceTree = "<group>"; };
+		0A4FB0182C29242100AC86F1 /* LanguageDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,16 +168,41 @@
 		0A4FB0012C263AB200AC86F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0A4FB0022C263AF100AC86F1 /* ResultsView.swift */,
+				0A4FB01A2C2924D500AC86F1 /* GuessingGame */,
+				0A4FB0172C29240600AC86F1 /* HomeScreen */,
+				0A4FB01B2C2925A600AC86F1 /* Review */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A4FB0172C29240600AC86F1 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0A4FB0182C29242100AC86F1 /* LanguageDropDown.swift */,
 				0A4FB0042C26413A00AC86F1 /* ImagePicker.swift */,
 				0A4FB0082C2654F400AC86F1 /* CameraView.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		0A4FB01A2C2924D500AC86F1 /* GuessingGame */ = {
+			isa = PBXGroup;
+			children = (
+				0A4FB0022C263AF100AC86F1 /* ResultsView.swift */,
 				0A4FB00B2C27ADA600AC86F1 /* CheckResultsView.swift */,
+			);
+			path = GuessingGame;
+			sourceTree = "<group>";
+		};
+		0A4FB01B2C2925A600AC86F1 /* Review */ = {
+			isa = PBXGroup;
+			children = (
 				0A4FB00D2C27E0A900AC86F1 /* ReviewMissedWordsView.swift */,
 				0A4FB00F2C27E0D700AC86F1 /* ReviewResultsView.swift */,
 				0A4FB0132C27E19100AC86F1 /* ReviewResult.swift */,
 				0A4FB0152C27E21F00AC86F1 /* MissedWord.swift */,
 			);
-			path = Views;
+			path = Review;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +337,7 @@
 			files = (
 				0A4FAFD82C25255B00AC86F1 /* Persistence.swift in Sources */,
 				0A4FB0162C27E21F00AC86F1 /* MissedWord.swift in Sources */,
+				0A4FB0192C29242100AC86F1 /* LanguageDropDown.swift in Sources */,
 				0A4FB0102C27E0D700AC86F1 /* ReviewResultsView.swift in Sources */,
 				0A4FB00E2C27E0A900AC86F1 /* ReviewMissedWordsView.swift in Sources */,
 				0A4FB0032C263AF200AC86F1 /* ResultsView.swift in Sources */,
