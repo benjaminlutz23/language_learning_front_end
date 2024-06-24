@@ -11,9 +11,9 @@ struct DropdownView: View {
     let title: String
     let prompt: String
     let options: [String]
+    @Binding var isExpanded: Bool
     let onSelect: (String) -> Void
 
-    @State private var isExpanded = false
     @State private var selection: String?
     @Environment(\.colorScheme) var scheme
 
