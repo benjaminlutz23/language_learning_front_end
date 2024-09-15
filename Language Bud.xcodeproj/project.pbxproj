@@ -46,16 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A4FAFCB2C25255A00AC86F1 /* LanguageBud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageBud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4FAFCB2C25255A00AC86F1 /* Language Bud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Language Bud.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4FAFCE2C25255A00AC86F1 /* LanguageBudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageBudApp.swift; sourceTree = "<group>"; };
 		0A4FAFD02C25255A00AC86F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0A4FAFD22C25255B00AC86F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A4FAFD52C25255B00AC86F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A4FAFD72C25255B00AC86F1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0A4FAFDA2C25255B00AC86F1 /* LanguageBud.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanguageBud.xcdatamodel; sourceTree = "<group>"; };
-		0A4FAFE02C25255C00AC86F1 /* LanguageBudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageBudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4FAFE02C25255C00AC86F1 /* Language BudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Language BudTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4FAFE42C25255C00AC86F1 /* LanguageBudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageBudTests.swift; sourceTree = "<group>"; };
-		0A4FAFEA2C25255C00AC86F1 /* LanguageBudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageBudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4FAFEA2C25255C00AC86F1 /* Language BudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Language BudUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4FAFEE2C25255C00AC86F1 /* LanguageBudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageBudUITests.swift; sourceTree = "<group>"; };
 		0A4FAFF02C25255C00AC86F1 /* LanguageBudUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageBudUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A4FAFFE2C25299E00AC86F1 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
@@ -109,9 +109,9 @@
 		0A4FAFCC2C25255A00AC86F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A4FAFCB2C25255A00AC86F1 /* LanguageBud.app */,
-				0A4FAFE02C25255C00AC86F1 /* LanguageBudTests.xctest */,
-				0A4FAFEA2C25255C00AC86F1 /* LanguageBudUITests.xctest */,
+				0A4FAFCB2C25255A00AC86F1 /* Language Bud.app */,
+				0A4FAFE02C25255C00AC86F1 /* Language BudTests.xctest */,
+				0A4FAFEA2C25255C00AC86F1 /* Language BudUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0A4FAFCA2C25255A00AC86F1 /* LanguageBud */ = {
+		0A4FAFCA2C25255A00AC86F1 /* Language Bud */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A4FAFF42C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "LanguageBud" */;
+			buildConfigurationList = 0A4FAFF42C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "Language Bud" */;
 			buildPhases = (
 				0A4FAFC72C25255A00AC86F1 /* Sources */,
 				0A4FAFC82C25255A00AC86F1 /* Frameworks */,
@@ -220,14 +220,14 @@
 			);
 			dependencies = (
 			);
-			name = LanguageBud;
+			name = "Language Bud";
 			productName = LanguageBud;
-			productReference = 0A4FAFCB2C25255A00AC86F1 /* LanguageBud.app */;
+			productReference = 0A4FAFCB2C25255A00AC86F1 /* Language Bud.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0A4FAFDF2C25255C00AC86F1 /* LanguageBudTests */ = {
+		0A4FAFDF2C25255C00AC86F1 /* Language BudTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A4FAFF72C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "LanguageBudTests" */;
+			buildConfigurationList = 0A4FAFF72C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "Language BudTests" */;
 			buildPhases = (
 				0A4FAFDC2C25255C00AC86F1 /* Sources */,
 				0A4FAFDD2C25255C00AC86F1 /* Frameworks */,
@@ -238,14 +238,14 @@
 			dependencies = (
 				0A4FAFE22C25255C00AC86F1 /* PBXTargetDependency */,
 			);
-			name = LanguageBudTests;
+			name = "Language BudTests";
 			productName = LanguageBudTests;
-			productReference = 0A4FAFE02C25255C00AC86F1 /* LanguageBudTests.xctest */;
+			productReference = 0A4FAFE02C25255C00AC86F1 /* Language BudTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0A4FAFE92C25255C00AC86F1 /* LanguageBudUITests */ = {
+		0A4FAFE92C25255C00AC86F1 /* Language BudUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A4FAFFA2C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "LanguageBudUITests" */;
+			buildConfigurationList = 0A4FAFFA2C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "Language BudUITests" */;
 			buildPhases = (
 				0A4FAFE62C25255C00AC86F1 /* Sources */,
 				0A4FAFE72C25255C00AC86F1 /* Frameworks */,
@@ -256,9 +256,9 @@
 			dependencies = (
 				0A4FAFEC2C25255C00AC86F1 /* PBXTargetDependency */,
 			);
-			name = LanguageBudUITests;
+			name = "Language BudUITests";
 			productName = LanguageBudUITests;
-			productReference = 0A4FAFEA2C25255C00AC86F1 /* LanguageBudUITests.xctest */;
+			productReference = 0A4FAFEA2C25255C00AC86F1 /* Language BudUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -284,7 +284,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0A4FAFC62C25255A00AC86F1 /* Build configuration list for PBXProject "LanguageBud" */;
+			buildConfigurationList = 0A4FAFC62C25255A00AC86F1 /* Build configuration list for PBXProject "Language Bud" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -297,9 +297,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A4FAFCA2C25255A00AC86F1 /* LanguageBud */,
-				0A4FAFDF2C25255C00AC86F1 /* LanguageBudTests */,
-				0A4FAFE92C25255C00AC86F1 /* LanguageBudUITests */,
+				0A4FAFCA2C25255A00AC86F1 /* Language Bud */,
+				0A4FAFDF2C25255C00AC86F1 /* Language BudTests */,
+				0A4FAFE92C25255C00AC86F1 /* Language BudUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -374,12 +374,12 @@
 /* Begin PBXTargetDependency section */
 		0A4FAFE22C25255C00AC86F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0A4FAFCA2C25255A00AC86F1 /* LanguageBud */;
+			target = 0A4FAFCA2C25255A00AC86F1 /* Language Bud */;
 			targetProxy = 0A4FAFE12C25255C00AC86F1 /* PBXContainerItemProxy */;
 		};
 		0A4FAFEC2C25255C00AC86F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0A4FAFCA2C25255A00AC86F1 /* LanguageBud */;
+			target = 0A4FAFCA2C25255A00AC86F1 /* Language Bud */;
 			targetProxy = 0A4FAFEB2C25255C00AC86F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -582,7 +582,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LanguageBud.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LanguageBud";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Language Bud.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Language Bud";
 			};
 			name = Debug;
 		};
@@ -602,7 +602,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LanguageBud.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LanguageBud";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Language Bud.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Language Bud";
 			};
 			name = Release;
 		};
@@ -645,7 +645,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A4FAFC62C25255A00AC86F1 /* Build configuration list for PBXProject "LanguageBud" */ = {
+		0A4FAFC62C25255A00AC86F1 /* Build configuration list for PBXProject "Language Bud" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A4FAFF22C25255C00AC86F1 /* Debug */,
@@ -654,7 +654,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A4FAFF42C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "LanguageBud" */ = {
+		0A4FAFF42C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "Language Bud" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A4FAFF52C25255C00AC86F1 /* Debug */,
@@ -663,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A4FAFF72C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "LanguageBudTests" */ = {
+		0A4FAFF72C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "Language BudTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A4FAFF82C25255C00AC86F1 /* Debug */,
@@ -672,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A4FAFFA2C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "LanguageBudUITests" */ = {
+		0A4FAFFA2C25255C00AC86F1 /* Build configuration list for PBXNativeTarget "Language BudUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A4FAFFB2C25255C00AC86F1 /* Debug */,

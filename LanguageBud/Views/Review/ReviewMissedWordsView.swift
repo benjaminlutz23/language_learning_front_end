@@ -25,7 +25,7 @@ struct ReviewMissedWordsView: View {
                 List {
                     ForEach(missedWords.indices, id: \.self) { index in
                         VStack(alignment: .leading) {
-                            AsyncImage(url: URL(string: "http://127.0.0.1:8080/extracted/\(missedWords[index].imagePath)")) { phase in
+                            AsyncImage(url: URL(string: "https://language-learning-16580904326.us-central1.run.app/extracted/\(missedWords[index].imagePath)")) { phase in
                                 switch phase {
                                 case .empty:
                                     ProgressView()
@@ -80,7 +80,7 @@ struct ReviewMissedWordsView: View {
     }
 
     private func fetchMissedWords() {
-        guard let url = URL(string: "http://127.0.0.1:8080/review_missed_words") else {
+        guard let url = URL(string: "https://language-learning-16580904326.us-central1.run.app/review_missed_words") else {
             self.errorMessage = "Invalid URL"
             return
         }
@@ -125,7 +125,7 @@ struct ReviewMissedWordsView: View {
     }
 
     private func checkGuesses() {
-        guard let url = URL(string: "http://127.0.0.1:8080/review_guess") else {
+        guard let url = URL(string: "https://language-learning-16580904326.us-central1.run.app/review_guess") else {
             self.errorMessage = "Invalid URL"
             return
         }

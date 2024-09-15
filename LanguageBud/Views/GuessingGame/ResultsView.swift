@@ -25,7 +25,7 @@ struct ResultsView: View {
                 List(objects.indices, id: \.self) { index in
                     HStack {
                         VStack(alignment: .leading) {
-                            if let url = URL(string: "http://127.0.0.1:8080/extracted/\(objects[index].imagePath)") {
+                            if let url = URL(string: "https://language-learning-16580904326.us-central1.run.app/extracted/\(objects[index].imagePath)") {
                                 AsyncImage(url: url) { phase in
                                     switch phase {
                                     case .empty:
