@@ -47,7 +47,7 @@ struct CheckResultsView: View {
     }
 
     private func sendGuessesToBackend(completion: @escaping (Result<[(word: String, guess: String, result: String)], Error>) -> Void) {
-        guard let url = URL(string: "https://language-learning-16580904326.us-central1.run.app/check_translations") else { return }
+        guard let url = URL(string: "\(Config.baseURL)/check_translations") else { return }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

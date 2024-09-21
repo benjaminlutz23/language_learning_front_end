@@ -68,7 +68,7 @@ struct DropdownView: View {
                                 }
                             }
                         }
-                        .frame(maxHeight: geometry.size.height) // Ensure the dropdown doesn't exceed the screen height
+                        .frame(maxHeight: geometry.size.height)
                         .background(Color.white)
                         .cornerRadius(10)
                         .shadow(radius: 5)

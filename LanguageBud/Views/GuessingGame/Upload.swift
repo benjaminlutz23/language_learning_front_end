@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 func uploadImage(image: UIImage, completion: @escaping (Result<[(name: String, imagePath: String)], Error>) -> Void) {
-    let url = URL(string: "https://language-learning-16580904326.us-central1.run.app/upload")!
+    let url = URL(string: "\(Config.baseURL)/upload")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     

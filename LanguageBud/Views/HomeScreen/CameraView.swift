@@ -46,7 +46,6 @@ struct CameraView: UIViewControllerRepresentable {
 
         checkCameraPermission { granted in
             if !granted {
-                // Handle lack of permission
                 context.coordinator.parent.presentationMode.wrappedValue.dismiss()
             }
         }

@@ -16,7 +16,7 @@
 		0A4FAFE52C25255C00AC86F1 /* LanguageBudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFE42C25255C00AC86F1 /* LanguageBudTests.swift */; };
 		0A4FAFEF2C25255C00AC86F1 /* LanguageBudUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFEE2C25255C00AC86F1 /* LanguageBudUITests.swift */; };
 		0A4FAFF12C25255C00AC86F1 /* LanguageBudUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFF02C25255C00AC86F1 /* LanguageBudUITestsLaunchTests.swift */; };
-		0A4FB0002C252C3300AC86F1 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFFE2C25299E00AC86F1 /* Routes.swift */; };
+		0A4FB0002C252C3300AC86F1 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFFE2C25299E00AC86F1 /* Upload.swift */; };
 		0A4FB0032C263AF200AC86F1 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0022C263AF100AC86F1 /* ResultsView.swift */; };
 		0A4FB0052C26413A00AC86F1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0042C26413A00AC86F1 /* ImagePicker.swift */; };
 		0A4FB0092C2654F400AC86F1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0082C2654F400AC86F1 /* CameraView.swift */; };
@@ -26,6 +26,7 @@
 		0A4FB0142C27E19100AC86F1 /* ReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0132C27E19100AC86F1 /* ReviewResult.swift */; };
 		0A4FB0162C27E21F00AC86F1 /* MissedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0152C27E21F00AC86F1 /* MissedWord.swift */; };
 		0A4FB0192C29242100AC86F1 /* LanguageDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FB0182C29242100AC86F1 /* LanguageDropDown.swift */; };
+		0AB344E42DE77B7600C99CBB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB344E32DE77B6E00C99CBB /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,7 @@
 		0A4FAFEA2C25255C00AC86F1 /* Language BudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Language BudUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4FAFEE2C25255C00AC86F1 /* LanguageBudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageBudUITests.swift; sourceTree = "<group>"; };
 		0A4FAFF02C25255C00AC86F1 /* LanguageBudUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageBudUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0A4FAFFE2C25299E00AC86F1 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		0A4FAFFE2C25299E00AC86F1 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		0A4FB0022C263AF100AC86F1 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		0A4FB0042C26413A00AC86F1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0A4FB0082C2654F400AC86F1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		0A4FB0132C27E19100AC86F1 /* ReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResult.swift; sourceTree = "<group>"; };
 		0A4FB0152C27E21F00AC86F1 /* MissedWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissedWord.swift; sourceTree = "<group>"; };
 		0A4FB0182C29242100AC86F1 /* LanguageDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDropDown.swift; sourceTree = "<group>"; };
+		0AB344E32DE77B6E00C99CBB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +122,13 @@
 			isa = PBXGroup;
 			children = (
 				0A4FB00A2C26584100AC86F1 /* Info.plist */,
+				0AB344E32DE77B6E00C99CBB /* Config.swift */,
 				0A4FAFD02C25255A00AC86F1 /* ContentView.swift */,
 				0A4FAFCE2C25255A00AC86F1 /* LanguageBudApp.swift */,
 				0A4FAFD72C25255B00AC86F1 /* Persistence.swift */,
 				0A4FAFD22C25255B00AC86F1 /* Assets.xcassets */,
 				0A4FAFD92C25255B00AC86F1 /* LanguageBud.xcdatamodeld */,
 				0A4FB0012C263AB200AC86F1 /* Views */,
-				0A4FAFFD2C25293500AC86F1 /* Networking */,
 				0A4FAFD42C25255B00AC86F1 /* Preview Content */,
 			);
 			path = LanguageBud;
@@ -157,14 +159,6 @@
 			path = LanguageBudUITests;
 			sourceTree = "<group>";
 		};
-		0A4FAFFD2C25293500AC86F1 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				0A4FAFFE2C25299E00AC86F1 /* Routes.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		0A4FB0012C263AB200AC86F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +182,7 @@
 		0A4FB01A2C2924D500AC86F1 /* GuessingGame */ = {
 			isa = PBXGroup;
 			children = (
+				0A4FAFFE2C25299E00AC86F1 /* Upload.swift */,
 				0A4FB0022C263AF100AC86F1 /* ResultsView.swift */,
 				0A4FB00B2C27ADA600AC86F1 /* CheckResultsView.swift */,
 			);
@@ -337,13 +332,14 @@
 			files = (
 				0A4FAFD82C25255B00AC86F1 /* Persistence.swift in Sources */,
 				0A4FB0162C27E21F00AC86F1 /* MissedWord.swift in Sources */,
+				0AB344E42DE77B7600C99CBB /* Config.swift in Sources */,
 				0A4FB0192C29242100AC86F1 /* LanguageDropDown.swift in Sources */,
 				0A4FB0102C27E0D700AC86F1 /* ReviewResultsView.swift in Sources */,
 				0A4FB00E2C27E0A900AC86F1 /* ReviewMissedWordsView.swift in Sources */,
 				0A4FB0032C263AF200AC86F1 /* ResultsView.swift in Sources */,
 				0A4FAFD12C25255A00AC86F1 /* ContentView.swift in Sources */,
 				0A4FB0052C26413A00AC86F1 /* ImagePicker.swift in Sources */,
-				0A4FB0002C252C3300AC86F1 /* Routes.swift in Sources */,
+				0A4FB0002C252C3300AC86F1 /* Upload.swift in Sources */,
 				0A4FB00C2C27ADA600AC86F1 /* CheckResultsView.swift in Sources */,
 				0A4FAFCF2C25255A00AC86F1 /* LanguageBudApp.swift in Sources */,
 				0A4FAFDB2C25255B00AC86F1 /* LanguageBud.xcdatamodeld in Sources */,
