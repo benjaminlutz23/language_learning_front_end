@@ -31,22 +31,15 @@ To get started with the Language Learning Front-End, follow these steps:
     ```bash
     git clone https://github.com/yourusername/language-learning-front-end.git
     ```
-2. Navigate to the project directory:
-    ```bash
-    cd language-learning-front-end
-    ```
-3. Install the dependencies:
-    ```bash
-    npm install
-    ```
+2. Open the cloned repository as a project in XCode.
+
 
 ## Usage
 
-To run the application locally, use the following command:
-```bash
-npm start
-```
-Open your browser and navigate to `http://localhost:3000` to start using the application.
+To run the application locally, first ensure the Config.swift is updated with the base URL to the running backend API.
+If you're also running the backend locally, this is likely `http://127.0.0.1:8080`.
+
+Once configured, you can run the application using the "play" feature in XCode.
 
 ## Contributing
 
@@ -66,7 +59,3 @@ We welcome contributions from the community! If you would like to contribute, pl
     git push origin feature-name
     ```
 5. Create a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
